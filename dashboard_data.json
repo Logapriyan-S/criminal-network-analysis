@@ -1,0 +1,723 @@
+{
+  "graph": {
+    "nodes": [
+      {
+        "id": "P001",
+        "name": "Matthew Rana",
+        "gang": 0,
+        "degree": 9
+      },
+      {
+        "id": "P002",
+        "name": "Daniel Dasgupta",
+        "gang": 0,
+        "degree": 6
+      },
+      {
+        "id": "P003",
+        "name": "Pratyush Chauhan",
+        "gang": 0,
+        "degree": 4
+      },
+      {
+        "id": "P004",
+        "name": "Yuvraj Gole",
+        "gang": 0,
+        "degree": 2
+      },
+      {
+        "id": "P005",
+        "name": "Vrinda Sama",
+        "gang": 0,
+        "degree": 4
+      },
+      {
+        "id": "P006",
+        "name": "Dayita Sehgal",
+        "gang": 0,
+        "degree": 6
+      },
+      {
+        "id": "P007",
+        "name": "Watika Buch",
+        "gang": 0,
+        "degree": 8
+      },
+      {
+        "id": "P008",
+        "name": "Vincent Kaul",
+        "gang": 0,
+        "degree": 7
+      },
+      {
+        "id": "P009",
+        "name": "Tanmayi Ramanathan",
+        "gang": 0,
+        "degree": 5
+      },
+      {
+        "id": "P010",
+        "name": "Matthew Yadav",
+        "gang": 2,
+        "degree": 3
+      },
+      {
+        "id": "P011",
+        "name": "Unnati Srinivasan",
+        "gang": 2,
+        "degree": 5
+      },
+      {
+        "id": "P012",
+        "name": "Chanchal Chand",
+        "gang": 2,
+        "degree": 5
+      },
+      {
+        "id": "P013",
+        "name": "Zarna Tailor",
+        "gang": 2,
+        "degree": 5
+      },
+      {
+        "id": "P014",
+        "name": "Ronith Nazareth",
+        "gang": 2,
+        "degree": 5
+      },
+      {
+        "id": "P015",
+        "name": "Ubika Ratti",
+        "gang": 2,
+        "degree": 6
+      },
+      {
+        "id": "P016",
+        "name": "Harshil Vyas",
+        "gang": 2,
+        "degree": 4
+      },
+      {
+        "id": "P017",
+        "name": "Irya Shanker",
+        "gang": 2,
+        "degree": 5
+      },
+      {
+        "id": "P018",
+        "name": "David Nanda",
+        "gang": 1,
+        "degree": 5
+      },
+      {
+        "id": "P019",
+        "name": "Aradhana Sethi",
+        "gang": 1,
+        "degree": 4
+      },
+      {
+        "id": "P020",
+        "name": "Elijah Kala",
+        "gang": 1,
+        "degree": 4
+      },
+      {
+        "id": "P021",
+        "name": "Harinakshi Sama",
+        "gang": 1,
+        "degree": 4
+      },
+      {
+        "id": "P022",
+        "name": "Isaiah Karnik",
+        "gang": 1,
+        "degree": 5
+      },
+      {
+        "id": "P023",
+        "name": "Arya Bhandari",
+        "gang": 1,
+        "degree": 6
+      },
+      {
+        "id": "P024",
+        "name": "Amrita Dayal",
+        "gang": 1,
+        "degree": 5
+      },
+      {
+        "id": "P025",
+        "name": "Anika Palan",
+        "gang": 0,
+        "degree": 8
+      }
+    ],
+    "edges": [
+      {
+        "source": "P001",
+        "target": "P002",
+        "type": "call",
+        "weight": 8
+      },
+      {
+        "source": "P001",
+        "target": "P003",
+        "type": "call",
+        "weight": 8
+      },
+      {
+        "source": "P001",
+        "target": "P004",
+        "type": "call",
+        "weight": 19
+      },
+      {
+        "source": "P001",
+        "target": "P005",
+        "type": "call",
+        "weight": 20
+      },
+      {
+        "source": "P001",
+        "target": "P006",
+        "type": "call",
+        "weight": 19
+      },
+      {
+        "source": "P001",
+        "target": "P007",
+        "type": "call",
+        "weight": 4
+      },
+      {
+        "source": "P001",
+        "target": "P008",
+        "type": "call",
+        "weight": 4
+      },
+      {
+        "source": "P001",
+        "target": "P009",
+        "type": "call",
+        "weight": 19
+      },
+      {
+        "source": "P001",
+        "target": "P025",
+        "type": "call",
+        "weight": 20
+      },
+      {
+        "source": "P002",
+        "target": "P003",
+        "type": "call",
+        "weight": 10
+      },
+      {
+        "source": "P002",
+        "target": "P006",
+        "type": "call",
+        "weight": 25
+      },
+      {
+        "source": "P002",
+        "target": "P007",
+        "type": "call",
+        "weight": 9
+      },
+      {
+        "source": "P002",
+        "target": "P008",
+        "type": "call",
+        "weight": 10
+      },
+      {
+        "source": "P002",
+        "target": "P009",
+        "type": "call",
+        "weight": 6
+      },
+      {
+        "source": "P003",
+        "target": "P007",
+        "type": "call",
+        "weight": 20
+      },
+      {
+        "source": "P003",
+        "target": "P009",
+        "type": "call",
+        "weight": 19
+      },
+      {
+        "source": "P004",
+        "target": "P008",
+        "type": "shared_address",
+        "weight": 1
+      },
+      {
+        "source": "P005",
+        "target": "P007",
+        "type": "call",
+        "weight": 9
+      },
+      {
+        "source": "P005",
+        "target": "P025",
+        "type": "call",
+        "weight": 20
+      },
+      {
+        "source": "P005",
+        "target": "P006",
+        "type": "transaction",
+        "weight": 5
+      },
+      {
+        "source": "P006",
+        "target": "P007",
+        "type": "call",
+        "weight": 17
+      },
+      {
+        "source": "P006",
+        "target": "P025",
+        "type": "call",
+        "weight": 5
+      },
+      {
+        "source": "P006",
+        "target": "P008",
+        "type": "transaction",
+        "weight": 1
+      },
+      {
+        "source": "P007",
+        "target": "P008",
+        "type": "call",
+        "weight": 15
+      },
+      {
+        "source": "P007",
+        "target": "P009",
+        "type": "call",
+        "weight": 12
+      },
+      {
+        "source": "P007",
+        "target": "P025",
+        "type": "call",
+        "weight": 19
+      },
+      {
+        "source": "P008",
+        "target": "P009",
+        "type": "call",
+        "weight": 4
+      },
+      {
+        "source": "P008",
+        "target": "P025",
+        "type": "transaction",
+        "weight": 3
+      },
+      {
+        "source": "P010",
+        "target": "P012",
+        "type": "call",
+        "weight": 13
+      },
+      {
+        "source": "P010",
+        "target": "P011",
+        "type": "transaction",
+        "weight": 5
+      },
+      {
+        "source": "P010",
+        "target": "P016",
+        "type": "transaction",
+        "weight": 5
+      },
+      {
+        "source": "P011",
+        "target": "P014",
+        "type": "call",
+        "weight": 11
+      },
+      {
+        "source": "P011",
+        "target": "P015",
+        "type": "transaction",
+        "weight": 6
+      },
+      {
+        "source": "P011",
+        "target": "P025",
+        "type": "call",
+        "weight": 2
+      },
+      {
+        "source": "P011",
+        "target": "P019",
+        "type": "call",
+        "weight": 1
+      },
+      {
+        "source": "P012",
+        "target": "P013",
+        "type": "call",
+        "weight": 14
+      },
+      {
+        "source": "P012",
+        "target": "P015",
+        "type": "call",
+        "weight": 16
+      },
+      {
+        "source": "P012",
+        "target": "P016",
+        "type": "call",
+        "weight": 5
+      },
+      {
+        "source": "P012",
+        "target": "P017",
+        "type": "transaction",
+        "weight": 2
+      },
+      {
+        "source": "P013",
+        "target": "P014",
+        "type": "call",
+        "weight": 11
+      },
+      {
+        "source": "P013",
+        "target": "P015",
+        "type": "call",
+        "weight": 9
+      },
+      {
+        "source": "P013",
+        "target": "P016",
+        "type": "call",
+        "weight": 17
+      },
+      {
+        "source": "P013",
+        "target": "P017",
+        "type": "call",
+        "weight": 16
+      },
+      {
+        "source": "P014",
+        "target": "P015",
+        "type": "call",
+        "weight": 11
+      },
+      {
+        "source": "P014",
+        "target": "P017",
+        "type": "transaction",
+        "weight": 3
+      },
+      {
+        "source": "P014",
+        "target": "P025",
+        "type": "call",
+        "weight": 3
+      },
+      {
+        "source": "P015",
+        "target": "P017",
+        "type": "call",
+        "weight": 18
+      },
+      {
+        "source": "P015",
+        "target": "P025",
+        "type": "call",
+        "weight": 2
+      },
+      {
+        "source": "P016",
+        "target": "P017",
+        "type": "transaction",
+        "weight": 2
+      },
+      {
+        "source": "P018",
+        "target": "P020",
+        "type": "call",
+        "weight": 13
+      },
+      {
+        "source": "P018",
+        "target": "P021",
+        "type": "call",
+        "weight": 7
+      },
+      {
+        "source": "P018",
+        "target": "P022",
+        "type": "call",
+        "weight": 9
+      },
+      {
+        "source": "P018",
+        "target": "P023",
+        "type": "call",
+        "weight": 20
+      },
+      {
+        "source": "P018",
+        "target": "P024",
+        "type": "call",
+        "weight": 11
+      },
+      {
+        "source": "P019",
+        "target": "P020",
+        "type": "call",
+        "weight": 15
+      },
+      {
+        "source": "P019",
+        "target": "P023",
+        "type": "call",
+        "weight": 6
+      },
+      {
+        "source": "P019",
+        "target": "P022",
+        "type": "transaction",
+        "weight": 6
+      },
+      {
+        "source": "P020",
+        "target": "P024",
+        "type": "call",
+        "weight": 19
+      },
+      {
+        "source": "P020",
+        "target": "P023",
+        "type": "transaction",
+        "weight": 3
+      },
+      {
+        "source": "P021",
+        "target": "P022",
+        "type": "call",
+        "weight": 15
+      },
+      {
+        "source": "P021",
+        "target": "P023",
+        "type": "call",
+        "weight": 17
+      },
+      {
+        "source": "P021",
+        "target": "P024",
+        "type": "transaction",
+        "weight": 2
+      },
+      {
+        "source": "P022",
+        "target": "P023",
+        "type": "call",
+        "weight": 4
+      },
+      {
+        "source": "P022",
+        "target": "P024",
+        "type": "transaction",
+        "weight": 5
+      },
+      {
+        "source": "P023",
+        "target": "P024",
+        "type": "call",
+        "weight": 5
+      }
+    ]
+  },
+  "key_players": [
+    {
+      "id": "P025",
+      "name": "Anika Palan",
+      "score": 0.41,
+      "degree": 0.333,
+      "betweenness": 0.49,
+      "eigenvector": 0.325,
+      "reason": "This suspect acts as a broker connecting otherwise-separate groups; is connected to other highly-connected suspects."
+    },
+    {
+      "id": "P011",
+      "name": "Unnati Srinivasan",
+      "score": 0.3205,
+      "degree": 0.208,
+      "betweenness": 0.479,
+      "eigenvector": 0.093,
+      "reason": "This suspect acts as a broker connecting otherwise-separate groups."
+    },
+    {
+      "id": "P001",
+      "name": "Matthew Rana",
+      "score": 0.2527,
+      "degree": 0.375,
+      "betweenness": 0.115,
+      "eigenvector": 0.413,
+      "reason": "This suspect is connected to other highly-connected suspects."
+    },
+    {
+      "id": "P019",
+      "name": "Aradhana Sethi",
+      "score": 0.2496,
+      "degree": 0.167,
+      "betweenness": 0.392,
+      "eigenvector": 0.018,
+      "reason": "This suspect acts as a broker connecting otherwise-separate groups."
+    },
+    {
+      "id": "P007",
+      "name": "Watika Buch",
+      "score": 0.215,
+      "degree": 0.333,
+      "betweenness": 0.072,
+      "eigenvector": 0.396,
+      "reason": "This suspect is connected to other highly-connected suspects."
+    }
+  ],
+  "gangs": [
+    {
+      "gang_id": 0,
+      "size": 10,
+      "members": [
+        "P001",
+        "P002",
+        "P003",
+        "P004",
+        "P005",
+        "P006",
+        "P007",
+        "P008",
+        "P009",
+        "P025"
+      ],
+      "member_names": [
+        "Matthew Rana",
+        "Daniel Dasgupta",
+        "Pratyush Chauhan",
+        "Yuvraj Gole",
+        "Vrinda Sama",
+        "Dayita Sehgal",
+        "Watika Buch",
+        "Vincent Kaul",
+        "Tanmayi Ramanathan",
+        "Anika Palan"
+      ]
+    },
+    {
+      "gang_id": 1,
+      "size": 7,
+      "members": [
+        "P018",
+        "P019",
+        "P020",
+        "P021",
+        "P022",
+        "P023",
+        "P024"
+      ],
+      "member_names": [
+        "David Nanda",
+        "Aradhana Sethi",
+        "Elijah Kala",
+        "Harinakshi Sama",
+        "Isaiah Karnik",
+        "Arya Bhandari",
+        "Amrita Dayal"
+      ]
+    },
+    {
+      "gang_id": 2,
+      "size": 8,
+      "members": [
+        "P010",
+        "P011",
+        "P012",
+        "P013",
+        "P014",
+        "P015",
+        "P016",
+        "P017"
+      ],
+      "member_names": [
+        "Matthew Yadav",
+        "Unnati Srinivasan",
+        "Chanchal Chand",
+        "Zarna Tailor",
+        "Ronith Nazareth",
+        "Ubika Ratti",
+        "Harshil Vyas",
+        "Irya Shanker"
+      ]
+    }
+  ],
+  "hidden_links": [
+    {
+      "a": "P020",
+      "a_name": "Elijah Kala",
+      "b": "P022",
+      "b_name": "Isaiah Karnik",
+      "shared_contacts": 4,
+      "score": 1.803,
+      "reason": "No recorded direct contact, but they share 4 common associates \u2014 a probable hidden link."
+    },
+    {
+      "a": "P003",
+      "a_name": "Pratyush Chauhan",
+      "b": "P008",
+      "b_name": "Vincent Kaul",
+      "shared_contacts": 4,
+      "score": 1.542,
+      "reason": "No recorded direct contact, but they share 4 common associates \u2014 a probable hidden link."
+    },
+    {
+      "a": "P002",
+      "a_name": "Daniel Dasgupta",
+      "b": "P025",
+      "b_name": "Anika Palan",
+      "shared_contacts": 4,
+      "score": 1.473,
+      "reason": "No recorded direct contact, but they share 4 common associates \u2014 a probable hidden link."
+    },
+    {
+      "a": "P006",
+      "a_name": "Dayita Sehgal",
+      "b": "P009",
+      "b_name": "Tanmayi Ramanathan",
+      "shared_contacts": 4,
+      "score": 1.473,
+      "reason": "No recorded direct contact, but they share 4 common associates \u2014 a probable hidden link."
+    },
+    {
+      "a": "P005",
+      "a_name": "Vrinda Sama",
+      "b": "P008",
+      "b_name": "Vincent Kaul",
+      "shared_contacts": 4,
+      "score": 1.449,
+      "reason": "No recorded direct contact, but they share 4 common associates \u2014 a probable hidden link."
+    }
+  ],
+  "stats": {
+    "nodes": 25,
+    "edges": 65,
+    "gangs": 3
+  }
+}

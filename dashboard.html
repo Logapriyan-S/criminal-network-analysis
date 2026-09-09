@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CrimeNet — Criminal Network Analysis</title>
+<script src="https://unpkg.com/d3@7/dist/d3.min.js"></script>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --line:#30363d; --ink:#e6edf3;
+    --muted:#8b949e; --accent:#f0883e; --red:#f85149; --blue:#58a6ff;
+    --green:#3fb950; --purple:#bc8cff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,sans-serif;overflow:hidden}
+  .topbar{height:52px;background:var(--panel);border-bottom:1px solid var(--line);
+    display:flex;align-items:center;padding:0 18px;gap:12px}
+  .topbar h1{font-size:16px;font-weight:600;letter-spacing:.3px}
+  .topbar .badge{font-size:11px;color:var(--muted);border:1px solid var(--line);
+    padding:2px 8px;border-radius:10px}
+  .topbar .spacer{flex:1}
+  .stat{font-size:12px;color:var(--muted)}
+  .stat b{color:var(--ink)}
+  .layout{display:flex;height:calc(100vh - 52px)}
+  .graph{flex:1;position:relative}
+  .sidebar{width:360px;background:var(--panel);border-left:1px solid var(--line);
+    overflow-y:auto;padding:16px}
+  .card{background:#0d1117;border:1px solid var(--line);border-radius:8px;
+    padding:12px;margin-bottom:14px}
+  .card h2{font-size:12px;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+  .kp{padding:8px;border-radius:6px;margin-bottom:8px;background:#161b22;
+    border-left:3px solid var(--accent);cursor:pointer;transition:.12s}
+  .kp:hover{background:#1c2230}
+  .kp.top{border-left-color:var(--red);background:#25151a}
+  .kp .rank{font-weight:700;color:var(--accent)}
+  .kp.top .rank{color:var(--red)}
+  .kp .nm{font-weight:600;font-size:13px}
+  .kp .rsn{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.4}
+  .kp .metrics{font-size:10px;color:#6e7681;margin-top:4px;font-family:monospace}
+  .gang{display:flex;align-items:center;gap:8px;font-size:12px;padding:5px 0}
+  .dot{width:11px;height:11px;border-radius:50%;flex-shrink:0}
+  .link-item{font-size:12px;padding:7px;border-radius:6px;background:#161b22;
+    margin-bottom:7px;border-left:3px solid var(--purple)}
+  .link-item .pair{font-weight:600}
+  .link-item .rsn{font-size:10.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+  .legend{position:absolute;bottom:14px;left:14px;background:rgba(22,27,34,.9);
+    border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:11px}
+  .legend .row{display:flex;align-items:center;gap:7px;margin:3px 0;color:var(--muted)}
+  .controls{position:absolute;top:14px;left:14px;display:flex;gap:8px}
+  .btn{background:var(--panel);border:1px solid var(--line);color:var(--ink);
+    font-size:12px;padding:7px 12px;border-radius:6px;cursor:pointer;font-family:inherit}
+  .btn:hover{border-color:var(--accent)}
+  .btn.active{background:var(--accent);color:#0d1117;border-color:var(--accent);font-weight:600}
+  .tooltip{position:absolute;background:#1c2230;border:1px solid var(--line);
+    border-radius:6px;padding:8px 10px;font-size:12px;pointer-events:none;
+    opacity:0;transition:.1s;z-index:10;max-width:220px}
+  .node-label{font-size:9px;fill:var(--muted);pointer-events:none}
+  circle.node{cursor:pointer;stroke:#0d1117;stroke-width:1.5px}
+  circle.node.highlight{stroke:#fff;stroke-width:3px}
+  line.edge{stroke:#30363d;stroke-opacity:.6}
+  line.edge.broker{stroke:var(--red);stroke-opacity:.9;stroke-width:2px}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>🕸️ CrimeNet</h1>
+  <span class="badge">AI-Powered Criminal Network Analysis</span>
+  <span class="badge">SIH 2026 · PS26189</span>
+  <div class="spacer"></div>
+  <span class="stat"><b id="s-nodes">0</b> suspects</span>
+  <span class="stat"><b id="s-edges">0</b> connections</span>
+  <span class="stat"><b id="s-gangs">0</b> groups detected</span>
+</div>
+<div class="layout">
+  <div class="graph" id="graph">
+    <div class="controls">
+      <button class="btn active" id="btn-gangs">Colour by gang</button>
+      <button class="btn" id="btn-key">Highlight key players</button>
+      <button class="btn" id="btn-reset">Reset</button>
+    </div>
+    <div class="legend" id="legend"></div>
+    <div class="tooltip" id="tooltip"></div>
+  </div>
+  <div class="sidebar">
+    <div class="card">
+      <h2>🎯 Key players (ranked by AI)</h2>
+      <div id="key-players"></div>
+    </div>
+    <div class="card">
+      <h2>👥 Detected groups</h2>
+      <div id="gangs"></div>
+    </div>
+    <div class="card">
+      <h2>🔮 Predicted hidden links</h2>
+      <div id="hidden-links"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const GANG_COLORS = ['#f0883e','#58a6ff','#3fb950','#bc8cff','#f85149','#d29922'];
+
+fetch('dashboard_data.json').then(r=>r.json()).then(data=>{
+  document.getElementById('s-nodes').textContent = data.stats.nodes;
+  document.getElementById('s-edges').textContent = data.stats.edges;
+  document.getElementById('s-gangs').textContent = data.stats.gangs;
+
+  const keyIds = new Set(data.key_players.map(p=>p.id));
+  renderGraph(data, keyIds);
+  renderKeyPlayers(data.key_players);
+  renderGangs(data.gangs);
+  renderLinks(data.hidden_links);
+  renderLegend(data.gangs);
+});
+
+let node, link, sim, colorMode='gang';
+
+function renderGraph(data, keyIds){
+  const el = document.getElementById('graph');
+  const W = el.clientWidth, H = el.clientHeight;
+  const svg = d3.select('#graph').append('svg').attr('width',W).attr('height',H);
+  const g = svg.append('g');
+  svg.call(d3.zoom().scaleExtent([0.3,4]).on('zoom',e=>g.attr('transform',e.transform)));
+
+  const nodes = data.graph.nodes.map(d=>({...d}));
+  const links = data.graph.edges.map(d=>({...d}));
+
+  sim = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d=>d.id).distance(60))
+    .force('charge', d3.forceManyBody().strength(-180))
+    .force('center', d3.forceCenter(W/2, H/2))
+    .force('collide', d3.forceCollide(18));
+
+  link = g.append('g').selectAll('line').data(links).join('line')
+    .attr('class','edge');
+
+  node = g.append('g').selectAll('circle').data(nodes).join('circle')
+    .attr('class','node')
+    .attr('r', d=> keyIds.has(d.id) ? 10 + d.degree : 5 + d.degree*0.8)
+    .attr('fill', d=>GANG_COLORS[d.gang % GANG_COLORS.length])
+    .call(drag(sim))
+    .on('mouseover', showTip).on('mouseout', hideTip);
+
+  const label = g.append('g').selectAll('text').data(nodes).join('text')
+    .attr('class','node-label').text(d=>d.name.split(' ')[0]).attr('dx',10).attr('dy',3);
+
+  sim.on('tick', ()=>{
+    link.attr('x1',d=>d.source.x).attr('y1',d=>d.source.y)
+        .attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);
+    node.attr('cx',d=>d.x).attr('cy',d=>d.y);
+    label.attr('x',d=>d.x).attr('y',d=>d.y);
+  });
+
+  window._nodes = nodes; window._keyIds = keyIds;
+
+  document.getElementById('btn-gangs').onclick = ()=>{
+    setActive('btn-gangs'); node.attr('fill',d=>GANG_COLORS[d.gang % GANG_COLORS.length])
+      .classed('highlight',false);
+  };
+  document.getElementById('btn-key').onclick = ()=>{
+    setActive('btn-key');
+    node.attr('fill',d=>keyIds.has(d.id)?'#f85149':'#30363d')
+      .classed('highlight',d=>keyIds.has(d.id));
+  };
+  document.getElementById('btn-reset').onclick = ()=>{
+    setActive('btn-gangs'); node.attr('fill',d=>GANG_COLORS[d.gang % GANG_COLORS.length])
+      .classed('highlight',false);
+  };
+}
+
+function setActive(id){
+  document.querySelectorAll('.btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function drag(sim){
+  return d3.drag()
+    .on('start',(e,d)=>{if(!e.active)sim.alphaTarget(.3).restart();d.fx=d.x;d.fy=d.y;})
+    .on('drag',(e,d)=>{d.fx=e.x;d.fy=e.y;})
+    .on('end',(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null;});
+}
+
+function showTip(e,d){
+  const t=document.getElementById('tooltip');
+  t.innerHTML=`<b>${d.name}</b><br>ID: ${d.id}<br>Connections: ${d.degree}`;
+  t.style.left=(e.offsetX+15)+'px';t.style.top=(e.offsetY+15)+'px';t.style.opacity=1;
+}
+function hideTip(){document.getElementById('tooltip').style.opacity=0;}
+
+function highlightNode(id){
+  node.classed('highlight',d=>d.id===id)
+      .attr('r',d=> d.id===id ? 16 : (window._keyIds.has(d.id)?10+d.degree:5+d.degree*0.8));
+}
+
+function renderKeyPlayers(players){
+  const el=document.getElementById('key-players');
+  el.innerHTML = players.map((p,i)=>`
+    <div class="kp ${i===0?'top':''}" onclick="highlightNode('${p.id}')">
+      <div><span class="rank">#${i+1}</span> <span class="nm">${p.name}</span></div>
+      <div class="rsn">${p.reason}</div>
+      <div class="metrics">betweenness ${p.betweenness} · degree ${p.degree}</div>
+    </div>`).join('');
+}
+function renderGangs(gangs){
+  const el=document.getElementById('gangs');
+  el.innerHTML = gangs.map(g=>`
+    <div class="gang">
+      <span class="dot" style="background:${GANG_COLORS[g.gang_id%GANG_COLORS.length]}"></span>
+      <span><b>Group ${g.gang_id+1}</b> — ${g.size} members</span>
+    </div>`).join('');
+}
+function renderLinks(links){
+  const el=document.getElementById('hidden-links');
+  el.innerHTML = links.map(l=>`
+    <div class="link-item">
+      <div class="pair">${l.a_name} ↔ ${l.b_name}</div>
+      <div class="rsn">${l.reason}</div>
+    </div>`).join('');
+}
+function renderLegend(gangs){
+  const el=document.getElementById('legend');
+  el.innerHTML = '<div style="color:#e6edf3;margin-bottom:5px;font-weight:600">Detected groups</div>' +
+    gangs.map(g=>`<div class="row"><span class="dot" style="background:${GANG_COLORS[g.gang_id%GANG_COLORS.length]}"></span>Group ${g.gang_id+1}</div>`).join('');
+}
+</script>
+</body>
+</html>

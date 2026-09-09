@@ -1,0 +1,721 @@
+{
+  "people": [
+    {
+      "id": "P001",
+      "name": "Matthew Rana",
+      "phone": "1815908301",
+      "city": "Mysore",
+      "gang": 0,
+      "role": "member"
+    },
+    {
+      "id": "P002",
+      "name": "Daniel Dasgupta",
+      "phone": "9099603082",
+      "city": "Aurangabad",
+      "gang": 0,
+      "role": "member"
+    },
+    {
+      "id": "P003",
+      "name": "Pratyush Chauhan",
+      "phone": "5181909378",
+      "city": "Mirzapur",
+      "gang": 0,
+      "role": "member"
+    },
+    {
+      "id": "P004",
+      "name": "Yuvraj Gole",
+      "phone": "1948757491",
+      "city": "Tiruvottiyur",
+      "gang": 0,
+      "role": "member"
+    },
+    {
+      "id": "P005",
+      "name": "Vrinda Sama",
+      "phone": "1895559797",
+      "city": "Amritsar",
+      "gang": 0,
+      "role": "member"
+    },
+    {
+      "id": "P006",
+      "name": "Dayita Sehgal",
+      "phone": "6507529170",
+      "city": "Sikar",
+      "gang": 0,
+      "role": "member"
+    },
+    {
+      "id": "P007",
+      "name": "Watika Buch",
+      "phone": "7684268465",
+      "city": "Belgaum",
+      "gang": 0,
+      "role": "member"
+    },
+    {
+      "id": "P008",
+      "name": "Vincent Kaul",
+      "phone": "7924402685",
+      "city": "Kottayam",
+      "gang": 0,
+      "role": "member"
+    },
+    {
+      "id": "P009",
+      "name": "Tanmayi Ramanathan",
+      "phone": "6617603137",
+      "city": "Kota",
+      "gang": 0,
+      "role": "member"
+    },
+    {
+      "id": "P010",
+      "name": "Matthew Yadav",
+      "phone": "5901396245",
+      "city": "Bhiwandi",
+      "gang": 1,
+      "role": "member"
+    },
+    {
+      "id": "P011",
+      "name": "Unnati Srinivasan",
+      "phone": "4121547280",
+      "city": "Tinsukia",
+      "gang": 1,
+      "role": "member"
+    },
+    {
+      "id": "P012",
+      "name": "Chanchal Chand",
+      "phone": "8525388853",
+      "city": "Ambattur",
+      "gang": 1,
+      "role": "member"
+    },
+    {
+      "id": "P013",
+      "name": "Zarna Tailor",
+      "phone": "0047439575",
+      "city": "Ambattur",
+      "gang": 1,
+      "role": "member"
+    },
+    {
+      "id": "P014",
+      "name": "Ronith Nazareth",
+      "phone": "7990751163",
+      "city": "Chandigarh",
+      "gang": 1,
+      "role": "member"
+    },
+    {
+      "id": "P015",
+      "name": "Ubika Ratti",
+      "phone": "2220297299",
+      "city": "Jaipur",
+      "gang": 1,
+      "role": "member"
+    },
+    {
+      "id": "P016",
+      "name": "Harshil Vyas",
+      "phone": "6330434839",
+      "city": "Mira-Bhayandar",
+      "gang": 1,
+      "role": "member"
+    },
+    {
+      "id": "P017",
+      "name": "Irya Shanker",
+      "phone": "8282880729",
+      "city": "Bhalswa Jahangir Pur",
+      "gang": 1,
+      "role": "member"
+    },
+    {
+      "id": "P018",
+      "name": "David Nanda",
+      "phone": "1803340187",
+      "city": "Anantapur",
+      "gang": 2,
+      "role": "member"
+    },
+    {
+      "id": "P019",
+      "name": "Aradhana Sethi",
+      "phone": "8384837261",
+      "city": "New Delhi",
+      "gang": 2,
+      "role": "member"
+    },
+    {
+      "id": "P020",
+      "name": "Elijah Kala",
+      "phone": "1252427316",
+      "city": "Chinsurah",
+      "gang": 2,
+      "role": "member"
+    },
+    {
+      "id": "P021",
+      "name": "Harinakshi Sama",
+      "phone": "5515058770",
+      "city": "Anand",
+      "gang": 2,
+      "role": "member"
+    },
+    {
+      "id": "P022",
+      "name": "Isaiah Karnik",
+      "phone": "1440242646",
+      "city": "Khammam",
+      "gang": 2,
+      "role": "member"
+    },
+    {
+      "id": "P023",
+      "name": "Arya Bhandari",
+      "phone": "6140141931",
+      "city": "Sonipat",
+      "gang": 2,
+      "role": "member"
+    },
+    {
+      "id": "P024",
+      "name": "Amrita Dayal",
+      "phone": "8312402344",
+      "city": "Orai",
+      "gang": 2,
+      "role": "member"
+    },
+    {
+      "id": "P025",
+      "name": "Anika Palan",
+      "phone": "4000883873",
+      "city": "Bongaigaon",
+      "gang": 0,
+      "role": "broker"
+    }
+  ],
+  "edges": [
+    {
+      "source": "P001",
+      "target": "P002",
+      "type": "call",
+      "weight": 6
+    },
+    {
+      "source": "P001",
+      "target": "P003",
+      "type": "call",
+      "weight": 3
+    },
+    {
+      "source": "P001",
+      "target": "P004",
+      "type": "call",
+      "weight": 19
+    },
+    {
+      "source": "P001",
+      "target": "P005",
+      "type": "call",
+      "weight": 20
+    },
+    {
+      "source": "P001",
+      "target": "P006",
+      "type": "call",
+      "weight": 18
+    },
+    {
+      "source": "P001",
+      "target": "P007",
+      "type": "call",
+      "weight": 4
+    },
+    {
+      "source": "P001",
+      "target": "P008",
+      "type": "call",
+      "weight": 4
+    },
+    {
+      "source": "P001",
+      "target": "P009",
+      "type": "call",
+      "weight": 19
+    },
+    {
+      "source": "P001",
+      "target": "P025",
+      "type": "call",
+      "weight": 20
+    },
+    {
+      "source": "P002",
+      "target": "P003",
+      "type": "call",
+      "weight": 9
+    },
+    {
+      "source": "P002",
+      "target": "P006",
+      "type": "call",
+      "weight": 20
+    },
+    {
+      "source": "P002",
+      "target": "P007",
+      "type": "call",
+      "weight": 9
+    },
+    {
+      "source": "P002",
+      "target": "P008",
+      "type": "call",
+      "weight": 6
+    },
+    {
+      "source": "P002",
+      "target": "P009",
+      "type": "call",
+      "weight": 6
+    },
+    {
+      "source": "P003",
+      "target": "P007",
+      "type": "call",
+      "weight": 20
+    },
+    {
+      "source": "P003",
+      "target": "P009",
+      "type": "call",
+      "weight": 19
+    },
+    {
+      "source": "P005",
+      "target": "P007",
+      "type": "call",
+      "weight": 9
+    },
+    {
+      "source": "P005",
+      "target": "P025",
+      "type": "call",
+      "weight": 20
+    },
+    {
+      "source": "P006",
+      "target": "P007",
+      "type": "call",
+      "weight": 17
+    },
+    {
+      "source": "P006",
+      "target": "P025",
+      "type": "call",
+      "weight": 4
+    },
+    {
+      "source": "P007",
+      "target": "P008",
+      "type": "call",
+      "weight": 15
+    },
+    {
+      "source": "P007",
+      "target": "P009",
+      "type": "call",
+      "weight": 12
+    },
+    {
+      "source": "P007",
+      "target": "P025",
+      "type": "call",
+      "weight": 17
+    },
+    {
+      "source": "P008",
+      "target": "P009",
+      "type": "call",
+      "weight": 4
+    },
+    {
+      "source": "P010",
+      "target": "P012",
+      "type": "call",
+      "weight": 13
+    },
+    {
+      "source": "P011",
+      "target": "P014",
+      "type": "call",
+      "weight": 11
+    },
+    {
+      "source": "P012",
+      "target": "P013",
+      "type": "call",
+      "weight": 14
+    },
+    {
+      "source": "P012",
+      "target": "P015",
+      "type": "call",
+      "weight": 16
+    },
+    {
+      "source": "P012",
+      "target": "P016",
+      "type": "call",
+      "weight": 5
+    },
+    {
+      "source": "P013",
+      "target": "P014",
+      "type": "call",
+      "weight": 11
+    },
+    {
+      "source": "P013",
+      "target": "P015",
+      "type": "call",
+      "weight": 9
+    },
+    {
+      "source": "P013",
+      "target": "P016",
+      "type": "call",
+      "weight": 17
+    },
+    {
+      "source": "P013",
+      "target": "P017",
+      "type": "call",
+      "weight": 16
+    },
+    {
+      "source": "P014",
+      "target": "P015",
+      "type": "call",
+      "weight": 10
+    },
+    {
+      "source": "P015",
+      "target": "P017",
+      "type": "call",
+      "weight": 15
+    },
+    {
+      "source": "P018",
+      "target": "P020",
+      "type": "call",
+      "weight": 9
+    },
+    {
+      "source": "P018",
+      "target": "P021",
+      "type": "call",
+      "weight": 7
+    },
+    {
+      "source": "P018",
+      "target": "P022",
+      "type": "call",
+      "weight": 9
+    },
+    {
+      "source": "P018",
+      "target": "P023",
+      "type": "call",
+      "weight": 20
+    },
+    {
+      "source": "P018",
+      "target": "P024",
+      "type": "call",
+      "weight": 11
+    },
+    {
+      "source": "P019",
+      "target": "P020",
+      "type": "call",
+      "weight": 15
+    },
+    {
+      "source": "P019",
+      "target": "P023",
+      "type": "call",
+      "weight": 6
+    },
+    {
+      "source": "P020",
+      "target": "P024",
+      "type": "call",
+      "weight": 19
+    },
+    {
+      "source": "P021",
+      "target": "P022",
+      "type": "call",
+      "weight": 14
+    },
+    {
+      "source": "P021",
+      "target": "P023",
+      "type": "call",
+      "weight": 17
+    },
+    {
+      "source": "P022",
+      "target": "P023",
+      "type": "call",
+      "weight": 4
+    },
+    {
+      "source": "P023",
+      "target": "P024",
+      "type": "call",
+      "weight": 5
+    },
+    {
+      "source": "P006",
+      "target": "P001",
+      "type": "transaction",
+      "weight": 1
+    },
+    {
+      "source": "P001",
+      "target": "P003",
+      "type": "transaction",
+      "weight": 5
+    },
+    {
+      "source": "P002",
+      "target": "P006",
+      "type": "transaction",
+      "weight": 5
+    },
+    {
+      "source": "P001",
+      "target": "P002",
+      "type": "transaction",
+      "weight": 2
+    },
+    {
+      "source": "P025",
+      "target": "P007",
+      "type": "transaction",
+      "weight": 2
+    },
+    {
+      "source": "P005",
+      "target": "P006",
+      "type": "transaction",
+      "weight": 5
+    },
+    {
+      "source": "P006",
+      "target": "P008",
+      "type": "transaction",
+      "weight": 1
+    },
+    {
+      "source": "P002",
+      "target": "P008",
+      "type": "transaction",
+      "weight": 4
+    },
+    {
+      "source": "P008",
+      "target": "P025",
+      "type": "transaction",
+      "weight": 3
+    },
+    {
+      "source": "P002",
+      "target": "P003",
+      "type": "transaction",
+      "weight": 1
+    },
+    {
+      "source": "P015",
+      "target": "P017",
+      "type": "transaction",
+      "weight": 3
+    },
+    {
+      "source": "P017",
+      "target": "P016",
+      "type": "transaction",
+      "weight": 2
+    },
+    {
+      "source": "P010",
+      "target": "P011",
+      "type": "transaction",
+      "weight": 5
+    },
+    {
+      "source": "P015",
+      "target": "P011",
+      "type": "transaction",
+      "weight": 5
+    },
+    {
+      "source": "P010",
+      "target": "P016",
+      "type": "transaction",
+      "weight": 5
+    },
+    {
+      "source": "P014",
+      "target": "P015",
+      "type": "transaction",
+      "weight": 1
+    },
+    {
+      "source": "P014",
+      "target": "P017",
+      "type": "transaction",
+      "weight": 3
+    },
+    {
+      "source": "P012",
+      "target": "P017",
+      "type": "transaction",
+      "weight": 2
+    },
+    {
+      "source": "P022",
+      "target": "P024",
+      "type": "transaction",
+      "weight": 5
+    },
+    {
+      "source": "P020",
+      "target": "P023",
+      "type": "transaction",
+      "weight": 2
+    },
+    {
+      "source": "P022",
+      "target": "P019",
+      "type": "transaction",
+      "weight": 2
+    },
+    {
+      "source": "P024",
+      "target": "P021",
+      "type": "transaction",
+      "weight": 2
+    },
+    {
+      "source": "P019",
+      "target": "P022",
+      "type": "transaction",
+      "weight": 4
+    },
+    {
+      "source": "P020",
+      "target": "P023",
+      "type": "transaction",
+      "weight": 1
+    },
+    {
+      "source": "P018",
+      "target": "P020",
+      "type": "transaction",
+      "weight": 4
+    },
+    {
+      "source": "P025",
+      "target": "P014",
+      "type": "call",
+      "weight": 3
+    },
+    {
+      "source": "P025",
+      "target": "P011",
+      "type": "call",
+      "weight": 2
+    },
+    {
+      "source": "P025",
+      "target": "P015",
+      "type": "call",
+      "weight": 2
+    },
+    {
+      "source": "P006",
+      "target": "P025",
+      "type": "call",
+      "weight": 1
+    },
+    {
+      "source": "P011",
+      "target": "P019",
+      "type": "call",
+      "weight": 1
+    },
+    {
+      "source": "P008",
+      "target": "P004",
+      "type": "shared_address",
+      "weight": 1
+    },
+    {
+      "source": "P015",
+      "target": "P011",
+      "type": "shared_address",
+      "weight": 1
+    },
+    {
+      "source": "P021",
+      "target": "P022",
+      "type": "shared_address",
+      "weight": 1
+    }
+  ],
+  "ground_truth": {
+    "broker": "P025",
+    "gangs": {
+      "P001": 0,
+      "P002": 0,
+      "P003": 0,
+      "P004": 0,
+      "P005": 0,
+      "P006": 0,
+      "P007": 0,
+      "P008": 0,
+      "P009": 0,
+      "P010": 1,
+      "P011": 1,
+      "P012": 1,
+      "P013": 1,
+      "P014": 1,
+      "P015": 1,
+      "P016": 1,
+      "P017": 1,
+      "P018": 2,
+      "P019": 2,
+      "P020": 2,
+      "P021": 2,
+      "P022": 2,
+      "P023": 2,
+      "P024": 2,
+      "P025": 0
+    },
+    "gang_names": [
+      "Group Red",
+      "Group Blue",
+      "Group Green"
+    ]
+  }
+}
